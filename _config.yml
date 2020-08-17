@@ -1,0 +1,55 @@
+---
+title: 
+description: 
+meta_img:
+twitter:
+favicon:
+url:
+gtm:
+schema:
+  name: 
+  type: 
+  image: 
+  logo:
+  phone: 
+  email: 
+  social:
+  location: 
+    address: 
+    city: 
+    state: 
+    zip: 
+  hours:
+    days:
+    opens:
+    closes:  
+timezone: America/New York
+future: true
+markdown: kramdown
+kramdown:
+  auto_ids: false
+exclude:
+- Gemfile
+- Gemfile.lock
+- node_modules
+- gruntfile.js
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-autoprefixer
+collections:
+  terms:
+    output: true
+  pages: 
+    output: true  
+
+autoprefixer:
+  browsers: 
+    - last 2 versions    
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: default

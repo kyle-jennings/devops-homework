@@ -1,0 +1,13 @@
+//Font face
+$font-name: "font-name";
+$font-path: 'http://font.com/font';
+@font-face {
+  font-family: $font-name;
+  src: url("$font-path.eot");
+  src: url("$font-path.otf") format("otf"),
+  url("$font-path.svg") format('svg'),
+  url("$font-path.ttf") format('ttf'),
+  url("$font-path.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

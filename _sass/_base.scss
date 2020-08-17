@@ -1,0 +1,46 @@
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width: 100%;
+	font-family: $body-font;
+	font-size: 16px;
+	color: $text_color;
+}
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+//Default Fonts
+h1, h2, h3, h4, h5 {
+	font-family: $header-font;
+	margin-top: 0;
+}
+
+//Links
+a {
+	font-weight: bold;
+	text-decoration: none;
+	color: $primary_color;
+	@include transition(color);
+	&:hover, &:active, &:focus {
+		color: darken($primary_color,15%);
+	}
+}
+
+//Form Inputs
+input,textarea {
+	&:not([type=submit]):not([type=file]):not([type=radio]):not([type=checkbox]) {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		border: 0;
+	}
+	&:active, &:focus {
+		outline: 0;
+	}
+	&.submit {
+		white-space: normal;
+	}
+}

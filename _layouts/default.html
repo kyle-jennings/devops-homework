@@ -1,0 +1,22 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% if site.gtm %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+    {{ content }}
+    <!-- Scripts -->
+    <script src="/js/site_functions.js"></script>
+</body>
+</html>
