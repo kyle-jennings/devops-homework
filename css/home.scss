@@ -5,14 +5,14 @@
 #home {
   #location-section {
     text-align: center;
-    min-height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom, #3F3CF3 0%,  #1F90C0 100%);
-    padding: 2rem;
     .inner-section {
       color: $white;
+      
+      
       .location-vis {
         position: relative;
         overflow: hidden;
@@ -43,6 +43,10 @@
           }
         }
       }
+    }
+    .privacy-link {
+      position: absolute;
+      bottom: 1rem;
     }
 
   }

@@ -60,3 +60,9 @@ input,textarea {
 		white-space: normal;
 	}
 }
+
+section {
+	background-image: linear-gradient(to bottom, #3F3CF3 0%,  #1F90C0 100%);
+	padding: 2rem;
+	min-height: 100vh;
+}
