@@ -125,19 +125,13 @@ deploy the site to S3.
 At this point, the site will be publically available at:
 http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/
 
-And we can view it at "staging.mylocationhw.com.com" if we point our DNS to
+And we can view it at "staging.mylocationhw.com" if we point that DNS entry to
 "http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
-
-If we had named the bucket to a FQDN, something like "mylocationhw.com", then the
-S3 website URL would be "http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
-
-And thus we could skip the DNS section and simply configure your domain to
-point to "http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
 
 The instructions to do this vary depending on the domain registrar but it should
 just be a matter of setting a cname record for the @ host to point to that address.
 
-But we want to put a CDN in front of the bucket, both for security but also added performance and flexability.
+But we want to put a CDN in front of the bucket, both for security but also added performance and flexability, then we have additional steps...
 
 ## CDN
 There are lots of options here.  You all had mentioned Cloudflare so I can touch
