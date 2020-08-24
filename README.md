@@ -34,7 +34,7 @@ outlined below via CodeBuild, and then deploy the built code to the specified S3
 First thing is first, lets create a public S3 bukcet for staging, we are going
 to not only make it public, but have it serve web pages.
 
-1 - First create a new pipeline and name it staging.mylocationhw (and later '-production' )
+1 - First create a new pipeline and name it staging.mylocationhw.com (and later '-production' )
 2 - Enter the bucket and change the settings for 'Static website hosting' to
 "Use this bucket to host a website".  
 3 - enter index.html for either both the Index and Error documents.  Or set 404 for error.
@@ -52,7 +52,7 @@ this setting will prevent granting access to the bucket.  We can and will change
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::staging.mylocationhw/*"
+            "Resource": "arn:aws:s3:::staging.mylocationhw.com/*"
         }
     ]
 }
@@ -116,23 +116,23 @@ This step is very easy
 1 - Select "Amazon S3" for the action provider
 2 - Ensure the "Input artifacts" are the same as the "Output artifacts" named
 in the previous step.  If you are using the Pipeline wizard, it should already be set for you.
-3 - Select the S3 bucket we created in the "Prepare S3 bucket" mylocationhw-production
+3 - Select the S3 bucket we created in the "Prepare S3 bucket" staging.mylocationhw.com
 4 - Make sure you check "Extract file before deploy"
 
 Once you save the pipeline, it should trigger and run through the process to build and
 deploy the site to S3.
 
 At this point, the site will be publically available at:
-http://staging.mylocationhw.s3-website-us-east-1.amazonaws.com/
+http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/
 
-And we can view it at "staging.mylocationhw.com" if we point our DNS to
-"http://staging.mylocationhw.s3-website-us-east-1.amazonaws.com/"
+And we can view it at "staging.mylocationhw.com.com" if we point our DNS to
+"http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
 
 If we had named the bucket to a FQDN, something like "mylocationhw.com", then the
-S3 website URL would be "http://mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
+S3 website URL would be "http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
 
 And thus we could skip the DNS section and simply configure your domain to
-point to "http://mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
+point to "http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
 
 The instructions to do this vary depending on the domain registrar but it should
 just be a matter of setting a cname record for the @ host to point to that address.
@@ -163,7 +163,7 @@ maybe pre-8 - Set "Grant Read Permissions on Bucket" to "Yes, Update Bucket Poli
 
 #### Cloudflare
 Less familiar with Cloudflare.  But the basics are, are to set up a DNS proxy (CNAME with with SSL termination) and point
-it to the s3 bucket at "http://staging.mylocationhw.s3-website-us-east-1.amazonaws.com/"
+it to the s3 bucket at "http://staging.mylocationhw.com.s3-website-us-east-1.amazonaws.com/"
 
 Adjust CDN settings to what is needed
 
